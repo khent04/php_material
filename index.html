@@ -1,0 +1,134 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <style type="text/css">
+      html {
+        background: url(css/bg.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+      .wow {max-width:50%; max-height:50%; margin:auto;
+      }
+      </style>
+    </head>
+
+    <body>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+
+      <div class="wow">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <form class="col s12" action="login.php" method="POST">
+            <br/>
+              <div class="row">
+                <div class="input-field col s12">
+                   <i class="material-icons prefix">account_circle</i>
+                  <input name="email" id="email" type="email" class="validate">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                   <i class="material-icons prefix">lock</i>
+                  <input name="password" id="password" type="password" class="validate">
+                  <label for="password">Password</label>
+                </div>
+              </div>
+              <br/>
+              <div class="row">
+                <div class="col s6">
+                  <a class="modal-trigger" href="#modal1" style="color:orange;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign Up
+                  </a>
+                </div>
+                <div class="col s6">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <button class="btn waves-effect waves-light" type="submit" name="action">Sign in
+                  <i class="material-icons right">send</i>
+                  </button>
+                </div>
+              </div>
+            </form>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- Modal Structure -->
+  <div id="modal1" class="modal card-panel blue-grey">
+    <div class="modal-content">
+      <center><h4 class="white-text">Create Account</h4></center>
+      <form class="col s12" action="signup.php" method="POST">
+        <div class="card-content white-text">
+          <div class="row">
+            <div class="input-field col s6">
+              <input name="name" id="first_name" type="text" class="validate">
+              <label for="name">Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input name="email" id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input name="password" id="password" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+            <div class="input-field col s6">
+              <input name="birthdate" id="birthdate" type="date" class="datepicker">
+              <label for="birthdate">Birthdate</label>
+            </div>
+          </div>
+          <div class="row">
+            &nbsp;&nbsp;&nbsp;
+            <label style="font-size:110%;">Gender</label><br/>&nbsp;&nbsp;&nbsp;
+            <input class="with-gap" name="gender" type="radio" id="male" value="male" />
+            <label for="male">Male</label>&nbsp;&nbsp;&nbsp;
+            <input class="with-gap" name="gender" type="radio" id="female" value="female"/>
+            <label for="female">Female</label>
+          </div>
+        </div>
+        <div class="card-action col s6" style="margin-left:75%;">
+          <button class="btn waves-effect waves-light" type="submit" name="action">Sign up
+          <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal-trigger').leanModal();
+
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+
+  });
+</script>
+
+  </body>
+</html>
+
+
+
